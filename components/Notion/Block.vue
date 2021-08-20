@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h3 v-if="isValidHeading3(this.block)" class="font-brand font-semibold text-2xl my-4">
+    <h3
+      v-if="isValidHeading3(this.block)"
+      class="font-brand font-semibold text-2xl my-4"
+    >
       {{ this.block.heading_3.text[0].text.content }}
     </h3>
     <paragraph
@@ -9,16 +12,19 @@
       v-bind:block="this.block"
     >
     </paragraph>
+    <p v-if="isValidBulletedListItem(this.block)">
+      {{ this.block.bulleted_list_item.text[0].text.content }}
+    </p>
   </div>
 </template>
 
 <script>
-import Paragraph from './Paragraph.vue'
+import Paragraph from "./Paragraph.vue";
 
 export default {
-    components: { Paragraph },
+  components: { Paragraph },
   props: {
-    block: Object
+    block: Object,
   },
   methods: {
     isValidParagraph(block) {
@@ -35,6 +41,15 @@ export default {
         return false;
       }
       if (block.heading_3.text.length == 0) {
+        return false;
+      }
+      return true;
+    },
+    isValidBulletedListItem(block) {
+      if (block.type !== "bulleted_list_item") {
+        return false;
+      }
+      if (block.bulleted_list_item.text.length == 0) {
         return false;
       }
       return true;
