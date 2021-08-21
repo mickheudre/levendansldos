@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center mx-8">
-    <div class="my-16">
-      <div class="w-72 h-72 bg-white my-16"></div>
+    <div class="my-8">
+      <img src="../assets/images/simon.svg" class="w-80" />
       <div class="max-w-screen-md mb-16">
         <page :page="content" />
       </div>

@@ -3,49 +3,71 @@
     <div class="max-w-screen-lg">
       <main class="min-h-screen w-full relative">
         <div class="flex md:flex-row flex-col items-center md:items-end">
-        <div class="w-3/5">
-          <img
-            src="../assets/images/header.png"
-            alt="dessin d'une personne sur un vélo, le vent dans le dos"
-          />
+          <div class="w-3/5">
+            <img
+              src="../assets/images/header.png"
+              alt="dessin d'une personne sur un vélo, le vent dans le dos"
+            />
+          </div>
+          <div class="flex-1">
+            <page class="my-8" :page="tagline" />
+            <button
+              class="
+                mb-16
+                py-2
+                w-full
+                border-2 border-black
+                rounded-md
+                font-semibold
+                text-lg
+                mx-auto
+              "
+            >
+              Contactez-moi
+            </button>
+          </div>
         </div>
-        <div class="flex-1">
-          <page class="font-sans text-xl my-8" :page="tagline"/>
-          <button class="mb-16 py-2 w-full border-2 border-black rounded-md font-semibold text-lg mx-auto">Contactez-moi</button>
-        </div>
-        </div>
-        <div class="w-full absolute bottom-0 transform -translate-y-48">
+        <div class="w-full absolute bottom-0 transform -translate-y-32">
           <a to="/" class="mx-auto">
-            <span class="block text-center">En apprendre plus</span>
-            <div class="mx-auto w-8 h-8 bg-white"></div>
+            <span class="block text-center font-semibold">En savoir plus</span>
+            <img src="../assets/images/arrow.png" class="mx-auto my-2 w-6" />
           </a>
         </div>
       </main>
       <section class="min-h-screen">
         <page :page="presentation" />
-        <page class="text-center font-semibold text-xl my-12" :page="quote" />
+          <page class="text-center font-semibold w-auto underline text-xl my-16" :page="quote" />
         <page :page="volets" />
-        <div class="flex flex-col md:flex-row justify-between mb-16 mt-4">
+        <div class="flex flex-col md:flex-row mx-auto justify-between mb-16 mt-4 w-3/4">
           <nuxt-link
             to="/volet-professionnel"
             class="w-38 flex flex-col items-center"
           >
-            <div class="w-32 h-32 bg-white mx-auto my-4" />
-            <span class="font-semibold">Volet Professionnel</span>
+            <img
+              class="mx-auto my-auto w-24 h-24"
+              src="../assets/images/pro.svg"
+            />
+            <span class="my-3 font-semibold">Volet Professionnel</span>
           </nuxt-link>
           <nuxt-link
             to="/volet-professionnel"
             class="w-38 flex flex-col items-center"
           >
-            <div class="w-32 h-32 bg-white mx-auto my-4" />
-            <span class="font-semibold">Volet Culture</span>
+            <img
+              class="mx-auto my-auto w-24 h-24"
+              src="../assets/images/film.svg"
+            />
+            <span class="my-3 font-semibold">Volet Culture</span>
           </nuxt-link>
           <nuxt-link
             to="/volet-professionnel"
             class="w-38 flex flex-col items-center"
           >
-            <div class="w-32 h-32 bg-white mx-auto my-4" />
-            <span class="font-semibold">Volet Citoyen</span>
+            <img
+              class="mx-auto my-auto w-24 h-24"
+              src="../assets/images/citoyen.svg"
+            />
+            <span class="my-3 font-semibold">Volet Citoyen</span>
           </nuxt-link>
         </div>
         <page :page="who" />
@@ -79,7 +101,7 @@ export default {
       "https://api.notion.com/v1/blocks/610a2e2682dc45dab2018608519ec115/children",
       {}
     );
-    
+
     return { presentation, who, quote, volets, tagline };
   },
   head() {
