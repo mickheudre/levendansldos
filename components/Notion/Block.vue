@@ -12,9 +12,9 @@
       v-bind:block="this.block"
     >
     </paragraph>
-    <p v-if="isValidBulletedListItem(this.block)">
+    <li v-if="isValidBulletedListItem(this.block)">
       {{ this.block.bulleted_list_item.text[0].text.content }}
-    </p>
+    </li>
   </div>
 </template>
 

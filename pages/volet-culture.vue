@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center mx-8">
     <div class="my-16">
+      <img class="w-40 mt-8 mb-12" src="../assets/images/film.svg" />
       <h2 class="font-semibold text-4xl text-left">Volet Culture</h2>
       <div class="max-w-screen-md mb-16">
         <page :page="content" />

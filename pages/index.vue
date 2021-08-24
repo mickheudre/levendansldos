@@ -13,6 +13,7 @@
             <page class="my-8" :page="tagline" />
             <button
               class="
+              transition-all duration-500 ease-in-out
                 mb-16
                 py-2
                 w-full
@@ -23,14 +24,14 @@
                 mx-auto
               "
             >
-              Contactez-moi
+              Comment puis-je vous aider ?
             </button>
           </div>
         </div>
-        <div class="w-full absolute bottom-0 transform -translate-y-32">
+        <div class="w-full absolute bottom-0 transform -translate-y-36">
           <a to="/" class="mx-auto">
             <span class="block text-center font-semibold">En savoir plus</span>
-            <img src="../assets/images/arrow.png" class="mx-auto my-2 w-6" />
+            <img src="../assets/images/arrow.png" class="animate-bounce mx-auto my-2 w-6" />
           </a>
         </div>
       </main>
@@ -38,7 +39,7 @@
         <page :page="presentation" />
           <page class="text-center font-semibold w-auto underline text-xl my-16" :page="quote" />
         <page :page="volets" />
-        <div class="flex flex-col md:flex-row mx-auto justify-between mb-16 mt-4 w-3/4">
+        <div class="flex flex-col md:flex-row mx-auto justify-between mb-16 mt-8 w-3/4">
           <nuxt-link
             to="/volet-professionnel"
             class="w-38 flex flex-col items-center"
@@ -50,7 +51,7 @@
             <span class="my-3 font-semibold">Volet Professionnel</span>
           </nuxt-link>
           <nuxt-link
-            to="/volet-professionnel"
+            to="/volet-culture"
             class="w-38 flex flex-col items-center"
           >
             <img
@@ -60,7 +61,7 @@
             <span class="my-3 font-semibold">Volet Culture</span>
           </nuxt-link>
           <nuxt-link
-            to="/volet-professionnel"
+            to="/volet-citoyen"
             class="w-38 flex flex-col items-center"
           >
             <img
