@@ -13,6 +13,10 @@ module.exports = {
       ...theme('colors'),
       'primary': '#FCDED4',
      }),
+     textColor: theme => ({
+      ...theme('colors'),
+      'primary': '#FCDED4',
+     }),
     fontFamily: {
       'brand': ['Sukhumvit Set'],
       'sans': ['Sukhumvit Set']

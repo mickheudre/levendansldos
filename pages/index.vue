@@ -22,6 +22,8 @@
                 font-semibold
                 text-lg
                 mx-auto
+                hover:text-primary
+                hover:bg-black
               "
             >
               Comment puis-je vous aider ?
