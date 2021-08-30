@@ -3,17 +3,22 @@
     <div class="max-w-screen-lg">
       <main class="min-h-screen w-full relative">
         <div class="flex md:flex-row flex-col items-center md:items-end">
-          <div class="w-3/5">
+          <div class="md:relative flex flex-col md:items-start items-center  mt-4">
             <img
-              src="../assets/images/header.png"
+              class="md:w-3/5 w-3/5"
+              src="../assets/images/hero.png"
               alt="dessin d'une personne sur un vélo, le vent dans le dos"
             />
+            <img src="../assets/images/logo-full.png" class="my-2 md:my-0 w-1/2 md:absolute md:right-0 md:top-0 md:transform md:translate-y-16" />
+
           </div>
           <div class="flex-1">
             <page class="my-8" :page="tagline" />
             <button
               class="
-              transition-all duration-500 ease-in-out
+                transition-all
+                duration-500
+                ease-in-out
                 mb-16
                 py-2
                 w-full
@@ -30,47 +35,69 @@
             </button>
           </div>
         </div>
-        <div class="w-full absolute bottom-0 transform -translate-y-36">
+        <div class="hidden md:block w-full absolute bottom-12 transform -translate-y-full">
           <a to="/" class="mx-auto">
             <span class="block text-center font-semibold">En savoir plus</span>
-            <img src="../assets/images/arrow.png" class="animate-bounce mx-auto my-2 w-6" />
+            <img
+              src="../assets/images/arrow.png"
+              class="mx-auto my-2 w-6 animate-bounce"
+            />
           </a>
         </div>
       </main>
       <section class="min-h-screen">
         <page :page="presentation" />
-          <page class="text-center font-semibold w-auto underline text-xl my-16" :page="quote" />
+        <page
+          class="text-center font-sans font-semibold italic  w-auto text-2xl my-16"
+          :page="quote"
+        />
         <page :page="volets" />
-        <div class="flex flex-col md:flex-row mx-auto justify-between mb-16 mt-8 w-3/4">
+        <div
+          class="
+            flex flex-col
+            md:flex-row
+            mx-auto
+            justify-between
+            mb-16
+            mt-8
+            w-3/4
+          "
+        >
           <nuxt-link
-            to="/volet-professionnel"
+            to="/accompagnement#pro"
             class="w-38 flex flex-col items-center"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/pro.svg"
             />
-            <span class="my-3 font-semibold">Volet Professionnel</span>
+            <span class="my-3 w-40 font-semibold text-center"
+              >Construire son projet professionnel</span
+            >
           </nuxt-link>
           <nuxt-link
-            to="/volet-culture"
+            to="/accompagnement#culture"
             class="w-38 flex flex-col items-center"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/film.svg"
             />
-            <span class="my-3 font-semibold">Volet Culture</span>
+            <span class="my-3 w-40 font-semibold text-center"
+              >Pratiquer des activités culturelles</span
+            >
           </nuxt-link>
           <nuxt-link
-            to="/volet-citoyen"
+            to="/accompagnement#citoyen"
             class="w-38 flex flex-col items-center"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/citoyen.svg"
             />
-            <span class="my-3 font-semibold">Volet Citoyen</span>
+            <span class="my-3 w-40 font-semibold text-center"
+              >Vivre une expérience citoyenne</span
+            >
           </nuxt-link>
         </div>
         <page :page="who" />

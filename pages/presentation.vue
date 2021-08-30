@@ -3,6 +3,7 @@
     <div class="my-8">
       <img src="../assets/images/simon.svg" class="w-80" />
       <div class="max-w-screen-md mb-16">
+        <page class="my-8" :page="titre" />
         <page :page="content" />
       </div>
     </div>
@@ -16,10 +17,14 @@ export default {
   components: { Page, Block },
   async asyncData({ $axios }) {
     const content = await $axios.$get(
-      "https://api.notion.com/v1/blocks/160165efd0d94fb884636e7b30687fe1/children",
+      "https://api.notion.com/v1/blocks/b843ca98271d4030a30ce5ed66d8a381/children",
       {}
     );
-    return { content };
+    const titre = await $axios.$get(
+      "https://api.notion.com/v1/blocks/a3f02ad9e68d409b8e66f62656bff43d/children",
+      {}
+    );
+    return { content, titre };
   },
   head() {
     return {

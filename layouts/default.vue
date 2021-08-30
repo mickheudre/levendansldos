@@ -1,6 +1,6 @@
 <template>
   <div id="default" class="min-h-screen bg-primary">
-    <div :class="view.atTopOfPage ? 'bg-primary' : 'bg-white'" class="transition-colors duration-250 ease-out w-full h-16 "></div>
+    <div :class="view.atTopOfPage ? 'bg-primary' : 'bg-white'" class="transition-colors duration-250 ease-out w-full h-6 "></div>
     <nav
     :class="view.atTopOfPage ? 'bg-primary' : 'bg-white'"
       class="
@@ -27,7 +27,7 @@
       </nuxt-link>
       <ul class="flex flex-row pt-1">
         <li class="mx-6 text-lg font-semibold">
-          <nuxt-link to="">Accompagnement Individuel </nuxt-link>
+          <nuxt-link to="accompagnement">Accompagnement Individuel </nuxt-link>
         </li>
         <li class="mx-6 text-lg font-semibold">
           <nuxt-link to="/presentation">Qui suis-je ?</nuxt-link>
@@ -57,7 +57,7 @@ export default {
   methods: {
     // the function to call when the user scrolls, added as a method
     handleScroll() {
-      if (window.pageYOffset > 64) {
+      if (window.pageYOffset > 48) {
         // user is scrolled
         if (this.view.atTopOfPage) this.view.atTopOfPage = false;
       } else {

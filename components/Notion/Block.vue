@@ -8,7 +8,7 @@
     </h3>
     <paragraph
       v-if="isValidParagraph(this.block)"
-      class="font-sans my-2"
+      class="my-2"
       v-bind:block="this.block"
     >
     </paragraph>
