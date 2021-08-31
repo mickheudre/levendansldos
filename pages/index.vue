@@ -14,6 +14,7 @@
           </div>
           <div class="flex-1">
             <page class="my-8" :page="tagline" />
+            <nuxt-link to="/accompagnement">
             <button
               class="
                 transition-all
@@ -33,6 +34,7 @@
             >
               Comment puis-je vous aider ?
             </button>
+            </nuxt-link>
           </div>
         </div>
         <div class="hidden md:block w-full absolute bottom-12 transform -translate-y-full">

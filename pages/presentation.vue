@@ -5,6 +5,19 @@
       <div class="max-w-screen-md mb-16">
         <page class="my-8" :page="titre" />
         <page :page="content" />
+        <div class="my-12">
+          <h3 class="font-semibold text-lg italic my-2">Ce que je ne suis pas :</h3>
+          <page class="mx-4" :page="iamnot" />
+        </div>
+        <div class="my-12">
+          <h3 class="font-semibold text-lg italic my-2">Ce que je suis :</h3>
+          <page class="max-w-md" :page="iam" />
+        </div>
+        <page class="max-w-screen-md" :page="parcours" />
+        <div class="my-8">
+         <h3 class="font-semibold text-lg my-2">Je suis diplômé de :</h3>
+        <page class="max-w-screen-md mx-4" :page="diplomes" />
+        </div>
       </div>
     </div>
   </div>
@@ -24,7 +37,23 @@ export default {
       "https://api.notion.com/v1/blocks/a3f02ad9e68d409b8e66f62656bff43d/children",
       {}
     );
-    return { content, titre };
+    const iam = await $axios.$get(
+      "https://api.notion.com/v1/blocks/c9117c398d0b4838bf235e6ed8bafe13/children",
+      {}
+    );
+    const iamnot = await $axios.$get(
+      "https://api.notion.com/v1/blocks/1daf5dab35f64f0caecac9bbe79cee86/children",
+      {}
+    );
+    const parcours = await $axios.$get(
+      "https://api.notion.com/v1/blocks/b47ee313a8d34ae88338bd0189652b98/children",
+      {}
+    );
+    const diplomes = await $axios.$get(
+      "https://api.notion.com/v1/blocks/fdb49a61709b4465afc475294b5617b5/children",
+      {}
+    );
+    return { content, titre, iamnot, iam, parcours, diplomes };
   },
   head() {
     return {

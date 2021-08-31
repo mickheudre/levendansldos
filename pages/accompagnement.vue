@@ -5,13 +5,38 @@
         Accompagnement individuel
       </h2>
       <page class="max-w-screen-md mb-16" :page="intro" />
-      <img id="professionnel" class="w-32 mt-8 mb-12" src="../assets/images/pro.svg" />
-      <page class="max-w-screen-md mb-16" :page="pro" />
-      <img id="culture" class="w-32 mt-8 mb-12" src="../assets/images/film.svg" />
-      <page class="max-w-screen-md mb-16" :page="culture" />
-      <img id="citoyen" class="w-32 mt-8 mb-12" src="../assets/images/citoyen.svg" />
-      <page class="max-w-screen-md mb-16" :page="citoyen" />
-      <page class="max-w-screen-md mb-16" :page="seances" />      
+      <div class="flex flex-col items-center">
+        <img
+          id="professionnel"
+          class="w-32 my-4"
+          src="../assets/images/pro.svg"
+        />
+        <h3 class="text-2xl text-center italic font-semibold my-4">
+          Construire son projet professionnel 
+        </h3>
+        <page class="max-w-screen-md mb-16" :page="pro" />
+      </div>
+      <div class="flex flex-col items-center">
+        <img id="culture" class="w-32 my-4" src="../assets/images/film.svg" />
+        <h3 class="text-2xl text-center italic font-semibold my-4">
+          Pratiquer des activités culturelles
+        </h3>
+        <page class="max-w-screen-md mb-16" :page="culture" />
+      </div>
+      <div class="flex flex-col items-center">
+        <img
+          id="citoyen"
+          class="w-32 mt-8 mb-12"
+          src="../assets/images/citoyen.svg"
+        />
+        <h3 class="text-2xl text-center italic font-semibold my-4">
+          Pratiquer des activités culturelles
+        </h3>
+        <page class="max-w-screen-md mb-16" :page="citoyen" />
+      </div>
+
+      <page class="max-w-screen-md mb-16" :page="seances" />
+      <page class="max-w-screen-md mb-16" :page="modalites" />
     </div>
   </div>
 </template>
@@ -22,7 +47,7 @@ import Block from "../components/Notion/Block";
 export default {
   components: { Page, Block },
   async asyncData({ $axios }) {
-      const intro = await $axios.$get(
+    const intro = await $axios.$get(
       "https://api.notion.com/v1/blocks/97cf6970b37e458898c9198be57d21a1/children",
       {}
     );
@@ -42,7 +67,11 @@ export default {
       "https://api.notion.com/v1/blocks/a04badbe18294e5bb0d803fd9b91ce2f/children",
       {}
     );
-    return { intro, pro, culture, citoyen, seances };
+    const modalites = await $axios.$get(
+      "https://api.notion.com/v1/blocks/9f8c9244397c484ba3b6b5d1b8b7b705/children",
+      {}
+    );
+    return { intro, pro, culture, citoyen, seances, modalites };
   },
   head() {
     return {
