@@ -1,23 +1,53 @@
 <template>
   <div id="default" class="min-h-screen bg-primary">
-    <div :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'" class="transition-colors duration-250 ease-out w-full h-6 "></div>
-    <nav :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'" class="md:hidden flex flex-col  justify-start items-end sticky top-0 w-full z-50">
+    <div
+      :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'"
+      class="transition-colors duration-250 ease-out w-full h-6"
+    ></div>
+    <nav
+      :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'"
+      class="
+        md:hidden
+        flex flex-col
+        justify-start
+        items-end
+        sticky
+        top-0
+        w-full
+        z-50
+      "
+    >
       <div class="flex flex-row justify-between items-center w-full">
-      <img :class="view.atTopOfPage && !view.menuVisible? 'opacity-0' : '' " class="h-10 m-4" src="../assets/images/logo.png" />
-      <button @click="view.menuVisible = !view.menuVisible">
-        <img class="h-6 m-4" src="../assets/images/burger-menu.svg" />
-      </button>
+        <img
+          :class="view.atTopOfPage && !view.menuVisible ? 'opacity-0' : ''"
+          class="h-10 m-4"
+          src="../assets/images/logo.png"
+        />
+        <button @click="view.menuVisible = !view.menuVisible">
+          <img class="h-6 m-4" src="../assets/images/burger-menu.svg" />
+        </button>
       </div>
-      <div :class="view.menuVisible ? 'flex' : 'hidden' " class="relative  flex-col w-full my-4">
-      <nuxt-link class="my-1 mx-4 font-semibold" to="/accompagnement">Accompagnement Individuel</nuxt-link>
-      <nuxt-link class="my-1 mx-4 font-semibold" to="/presentation">Qui suis-je ?</nuxt-link>
-      <nuxt-link class="my-1 mx-4 font-semibold" to="/contact">Contact</nuxt-link>
+      <div
+        :class="view.menuVisible ? 'flex' : 'hidden'"
+        class="relative flex-col w-full my-4"
+      >
+        <nuxt-link class="my-1 mx-4 font-semibold" to="/accompagnement"
+          >Accompagnement Individuel</nuxt-link
+        >
+        <nuxt-link class="my-1 mx-4 font-semibold" to="/presentation"
+          >Qui suis-je ?</nuxt-link
+        >
+        <nuxt-link class="my-1 mx-4 font-semibold" to="/contact"
+          >Contact</nuxt-link
+        >
       </div>
     </nav>
     <nav
-    :class="view.atTopOfPage ? 'bg-primary' : 'bg-white'"
+      :class="view.atTopOfPage ? 'bg-primary' : 'bg-white'"
       class="
-        transition-colors duration-250 ease-out
+        transition-colors
+        duration-250
+        ease-out
         z-50
         hidden
         sticky
@@ -40,24 +70,35 @@
       </nuxt-link>
       <ul class="flex flex-row pt-1">
         <li class="mx-6 text-lg font-semibold">
-          <nuxt-link to="accompagnement">Accompagnement Individuel</nuxt-link>
+          <nuxt-link to="/accompagnement">Accompagnement Individuel</nuxt-link>
         </li>
         <li class="mx-6 text-lg font-semibold">
           <nuxt-link to="/presentation">Qui suis-je ?</nuxt-link>
         </li>
         <li class="mx-6 text-lg font-semibold">
-          <nuxt-link to="">Contact</nuxt-link>
+          <nuxt-link to="/contact">Contact</nuxt-link>
         </li>
       </ul>
     </nav>
     <Nuxt />
-    <footer class="mt-16 bg-white flex flex-row justify-between items-center p-4">
-    <div>
-      <p>Le vent dans l'dos</p>
-      <p>Mentions légales</p>
-
-    </div>
-      <p>Site conçu et réalisé par <a href="https://cmllemrtn.com/">Camille Martin</a> et <a href="https://www.mickheudre.me/">Mickaël Heudre</a></p>
+    <footer
+      class="mt-16 bg-white flex flex-wrap flex-row justify-between items-center p-4"
+    >
+      <p class="w-52 m-4">
+        Le vent dans l'dos fait parti de la coopérative
+        <a class="font-semibold" href="www.vecteuractivites.com">
+          Vecteur activité
+        </a>
+      </p>
+      <div class="flex flex-col m-4">
+        <a href="mailto:contact@leventdansldos.fr">contact@leventdansldos.fr</a>
+        <nuxt-link to="legal">Mentions légales</nuxt-link>
+      </div>
+      <p class="m-4">
+        Site conçu et réalisé par
+        <a href="https://cmllemrtn.com/">Camille Martin</a> et
+        <a href="https://www.mickheudre.me/">Mickaël Heudre</a>
+      </p>
     </footer>
   </div>
 </template>
@@ -68,14 +109,14 @@ export default {
     return {
       view: {
         atTopOfPage: true,
-        menuVisible: false
+        menuVisible: false,
       },
     };
   },
-   watch: {
-    $route () {
-      this.view.menuVisible = false
-    }
+  watch: {
+    $route() {
+      this.view.menuVisible = false;
+    },
   },
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);
