@@ -3,7 +3,7 @@
     <div :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'" class="transition-colors duration-250 ease-out w-full h-6 "></div>
     <nav :class="view.atTopOfPage && !view.menuVisible ? 'bg-primary' : 'bg-white'" class="md:hidden flex flex-col  justify-start items-end sticky top-0 w-full z-50">
       <div class="flex flex-row justify-between items-center w-full">
-      <img :class="view.menuVisible ? '' : 'opacity-0'" class="h-10 mx-4" src="../assets/images/logo.png" />
+      <img :class="view.atTopOfPage && !view.menuVisible? 'opacity-0' : '' " class="h-10 m-4" src="../assets/images/logo.png" />
       <button @click="view.menuVisible = !view.menuVisible">
         <img class="h-6 m-4" src="../assets/images/burger-menu.svg" />
       </button>
