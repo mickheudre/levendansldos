@@ -30,7 +30,7 @@
           src="../assets/images/citoyen.svg"
         />
         <h3 class="text-2xl text-center italic font-semibold my-4">
-          Pratiquer des activités culturelles
+          Vivre une expérience associative et citoyenne
         </h3>
         <page class="max-w-screen-md mb-16" :page="citoyen" />
       </div>
