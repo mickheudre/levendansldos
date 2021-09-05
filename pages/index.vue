@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-center items-center mx-8">
     <div class="max-w-screen-lg">
-      <main class="min-h-screen w-full relative">
+      <main class="md:min-h-screen w-full relative">
         <div class="flex md:flex-row flex-col items-center md:items-end">
           <div class="md:relative flex flex-col md:items-start items-center  mt-4">
             <img
@@ -50,7 +50,7 @@
       <section class="min-h-screen">
         <page :page="presentation" />
         <page
-          class="text-center font-sans font-semibold italic  w-auto text-2xl my-16"
+          class="text-center font-sans font-semibold italic  w-auto text-2xl my-20"
           :page="quote"
         />
         <page :page="volets" />
@@ -61,43 +61,43 @@
             mx-auto
             justify-between
             mb-16
-            mt-8
+            mt-12
             w-3/4
           "
         >
           <nuxt-link
             to="/accompagnement#pro"
-            class="w-38 flex flex-col items-center"
+            class="w-38 flex flex-col items-center my-4 md:my-0"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/pro.svg"
             />
-            <span class="my-3 w-40 font-semibold text-center"
+            <span class="my-6 w-40 font-semibold text-center"
               >Construire son projet professionnel</span
             >
           </nuxt-link>
           <nuxt-link
             to="/accompagnement#culture"
-            class="w-38 flex flex-col items-center"
+            class="w-38 flex flex-col items-center my-4 md:my-0"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/film.svg"
             />
-            <span class="my-3 w-40 font-semibold text-center"
+            <span class="my-6 w-40 font-semibold text-center"
               >Pratiquer des activités culturelles</span
             >
           </nuxt-link>
           <nuxt-link
             to="/accompagnement#citoyen"
-            class="w-38 flex flex-col items-center"
+            class="w-38 flex flex-col items-center my-4 md:my-0"
           >
             <img
               class="mx-auto my-auto w-24 h-24"
               src="../assets/images/citoyen.svg"
             />
-            <span class="my-3 w-40 font-semibold text-center"
+            <span class="my-6 w-40 font-semibold text-center"
               >Vivre une expérience citoyenne</span
             >
           </nuxt-link>
