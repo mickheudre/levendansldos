@@ -84,10 +84,10 @@
     <footer
       class="mt-16 bg-white flex flex-wrap flex-row justify-between items-center p-4"
     >
-      <p class="w-52 m-4">
-        Le vent dans l'dos fait parti de la coopérative
+      <p class="w-56 m-4">
+        Le Vent dans l'dos fait partie de la coopérative
         <a class="font-semibold" href="www.vecteuractivites.com">
-          Vecteur activité
+          Vecteur Activités
         </a>
       </p>
       <div class="flex flex-col m-4">
