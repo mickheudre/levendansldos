@@ -86,7 +86,7 @@
     >
       <p class="w-56 m-4">
         Le Vent dans l'dos fait partie de la coopérative
-        <a class="font-semibold" href="www.vecteuractivites.com">
+        <a class="font-semibold" href="https://www.vecteuractivites.com">
           Vecteur Activités
         </a>
       </p>
