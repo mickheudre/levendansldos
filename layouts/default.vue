@@ -18,11 +18,13 @@
       "
     >
       <div class="flex flex-row justify-between items-center w-full">
-        <img
+        <nuxt-link
           :class="view.atTopOfPage && !view.menuVisible ? 'opacity-0' : ''"
           class="h-10 m-4"
-          src="../assets/images/logo.png"
-        />
+          to="/"
+        >
+          <img class="h-10" src="../assets/images/logo.png" />
+        </nuxt-link>
         <button @click="view.menuVisible = !view.menuVisible">
           <img class="h-6 m-4" src="../assets/images/burger-menu.svg" />
         </button>
@@ -82,7 +84,14 @@
     </nav>
     <Nuxt />
     <footer
-      class="mt-16 bg-white flex flex-wrap flex-row justify-between items-center p-4"
+      class="
+        mt-16
+        bg-white
+        flex flex-wrap flex-row
+        justify-between
+        items-center
+        p-4
+      "
     >
       <p class="w-56 m-4">
         Le Vent dans l'dos fait partie de la coopérative
